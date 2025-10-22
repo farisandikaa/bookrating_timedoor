@@ -88,9 +88,16 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### 4. Run Migration and Seeders
+
+### 4. Database Setup
 ```
-php artisan migrate --seed
+To use this project properly, you’ll need to import the provided MySQL database.
+
+1. Create the Database
+Open your MySQL client or phpMyAdmin, then create a new database named `timedoor_db`:
+
+2. Import the SQL
+Import the sql located in bookrating_timedoor/timedoor_db.sql
 ```
 
 ### 5. Build frontend assets
