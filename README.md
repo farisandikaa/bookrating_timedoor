@@ -112,9 +112,9 @@ php artisan serve
 ---
 
 ## 🧠 Notes
-Tailwind CSS is set up through Vite for fast builds.
-All custom JavaScript (including the dark mode toggle) is placed in resources/js.
-Make sure to run npm run dev every time you update your styles.
+- Tailwind CSS is set up through Vite for fast builds.
+- All custom JavaScript (including the dark mode toggle) is placed in resources/js.
+- Make sure to run npm run dev every time you update your styles.
 
 ---
 
