@@ -1,4 +1,4 @@
-# 📚 Book Rating App — PT. Javis Teknologi Albarokah Web Programmer Challenge
+# 📚 Book Rating App — Timedoor Backend Programming Exam
 
 ![Laravel](https://img.shields.io/badge/Laravel-10-FF2D20?style=flat&logo=laravel)
 ![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?style=flat&logo=php)
