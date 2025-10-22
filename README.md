@@ -21,7 +21,6 @@ Includes features like **dark mode toggle**, **search & pagination**, and **inte
 - Search and pagination with customizable per-page options  
 - Responsive layout with Tailwind CSS 3.3  
 - Modern layout using Laravel Blade + Vite  
-- Clean separation between logic and frontend (minimal inline scripts) 
 
 ---
 
@@ -94,10 +93,24 @@ DB_PASSWORD=
 To use this project properly, you’ll need to import the provided MySQL database.
 
 1. Create the Database
-Open your MySQL client or phpMyAdmin, then create a new database named `timedoor_db`:
+Open your MySQL client or phpMyAdmin, then create a new database named `timedoor_db`
 
 2. Import the SQL
 Import the sql located in bookrating_timedoor/timedoor_db.sql
+
+Or if you want to fill faked data by yourself without import timedoor_db.sql, you can run this command : 
+
+php artisan db:seed
+
+Open your MySQL client or phpMyAdmin, click SQL and run this command :
+
+UPDATE books
+SET name = REGEXP_REPLACE(name, '[#0-9]+$', '');
+
+UPDATE authors
+SET name = REGEXP_REPLACE(name, '[#0-9]+$', '');
+
+
 ```
 
 ### 5. Build frontend assets
@@ -109,6 +122,56 @@ npm run dev
 ```
 php artisan serve
 ```
+---
+
+## API Documentation
+
+### **GET /books**
+```
+Get the list of books with their authors, average rating, and voter count.
+
+[
+  {
+    "id": 1,
+    "book_name": "Officiis eum at",
+    "author": "Prof. Eldridge Mayer MD",
+    "avg_rating": 10.00,
+    "voter_count": 1
+  }
+]
+```
+
+### **GET /top**
+```
+Get the top 10 most famous authors sorted by total voter count.
+
+[
+  {
+    "id": 1,
+    "author_name": "Timmy Boehm",
+    "voter_count": 3
+  }
+]
+
+```
+
+### **POST /create-rating**
+```
+Create a new rating for a specific book.
+Request
+{
+  "author_id": 1,
+  "book_id": 2,
+  "rating": 9
+}
+
+Response
+{
+  "message": "Rating added successfully"
+}
+
+```
+
 ---
 
 ## 🧠 Notes
